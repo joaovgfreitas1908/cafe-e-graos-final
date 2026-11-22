@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Configurações gerais da página e conexão com o CSS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Café & Grãos</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <!-- Botões de acessibilidade para ajustar a fonte e alternar o tema -->
+    <div class="barra-acessibilidade" role="group" aria-label="Ferramentas de acessibilidade">
+        <button type="button" id="diminuir-fonte" aria-label="Diminuir tamanho da fonte" title="Diminuir fonte">A-</button>
+        <button type="button" id="aumentar-fonte" aria-label="Aumentar tamanho da fonte" title="Aumentar fonte">A+</button>
+        <button type="button" id="alternar-tema" aria-label="Ativar tema escuro" title="Alternar tema">🌙</button>
+    </div>
+
+    <!-- Container principal com o título e o formulário de login -->
+    <div class="login-container">
+        <h2>Bem-vindo ao Café & Grãos!</h2>
+        <p>Acesse sua conta para continuar.</p>
+
+        <!-- Formulário de login com validação personalizada pelo JavaScript -->
+        <form id="form-login" action="#" method="POST" novalidate>
+
+            <!-- Campo para digitar o usuário e exibir mensagens de erro -->
+            <div class="form-group">
+                <label for="login">Usuário</label>
+                <input type="text" id="login" name="Login"
+                    placeholder="Digite seu e-mail ou nome cadastrado"
+                    autocomplete="username"
+                    aria-describedby="erro-usuario"
+                    required>
+                <small id="erro-usuario" class="mensagem-erro" aria-live="polite"></small>
+            </div>
+
+            <!-- Campo de senha com botão para mostrar ou ocultar os caracteres -->
+            <div class="form-group">
+                <label for="senha">Senha</label>
+
+                <div class="campo-senha">
+                    <input type="password" id="senha" name="senha"
+                        placeholder="Digite sua senha"
+                        autocomplete="current-password"
+                        aria-describedby="erro-senha"
+                        required>
+
+                    <button type="button" id="mostrar-senha"
+                        aria-label="Mostrar senha"
+                        aria-pressed="false"
+                        aria-controls="senha">
+
+                        <!-- Ícone de olho aberto para quando a senha estiver visível -->
+                        <svg id="olho-aberto"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20" height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                            hidden>
+                            <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+
+                        <!-- Ícone de olho riscado para quando a senha estiver oculta -->
+                        <svg id="olho-fechado"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20" height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true">
+                            <path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-1.444 2.49"/>
+                            <path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"/>
+                            <path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"/>
+                            <path d="m2 2 20 20"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <small id="erro-senha" class="mensagem-erro" aria-live="polite"></small>
+
+                <!-- Opção de lembrar o usuário e link para recuperar a senha -->
+                <div class="opcoes-login">
+                    <label for="lembrar">
+                        <input type="checkbox" id="lembrar" name="lembrar">
+                        Lembrar de mim
+                    </label>
+                    <a href="../TELA REC SENHA/recuperacao.html">Esqueci minha senha</a>
+                </div>
+            </div>
+
+            <!-- Botão para enviar os dados do formulário -->
+            <button type="submit" class="btn-entrar">Entrar</button>
+        </form>
+
+        <!-- Link para cadastro de novos usuários -->
+        <div class="links_uteis">
+            <span>Não tem uma conta?
+                <a href="../TELA CADASTRO/cadastro.html">Criar conta</a>
+            </span>
+            <br>
+            <a href="../HOME/inicial.html" style="display:inline-block; margin-top:8px; font-size:13px;">← Voltar para o Início</a>
+        </div>
+    </div>
+
+    <!-- Notificação de confirmação exibida no canto inferior direito -->
+    <div id="notificacao-sucesso"
+         class="notificacao-sucesso"
+         role="status"
+         aria-live="polite"
+         aria-atomic="true"></div>
+
+    <!-- Conecta o JavaScript responsável pelas funcionalidades do login -->
+    <script src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erro 403 - Café &amp; Grãos</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="stylesheet" href="erro403.css">
+    <script>
+        (function () {
+            try {
+                if (localStorage.getItem("temaCafeGraos") === "escuro") {
+                    document.documentElement.classList.add("tema-escuro-init");
+                }
+            } catch (e) {}
+        })();
+    </script>
+</head>
+<body>
+    <div class="container-erro">
+        <img src="xicara-erro.png" alt="Café derramado" class="imagem-erro">
+
+        <div class="texto-erro">
+            <h1 class="codigo-erro">403</h1>
+            <h2>Acesso não autorizado</h2>
+            <p>Você precisa estar logado para acessar o Quiz e sua área restrita. Por favor, autentique-se primeiro.</p>
+
+            <div class="acoes-erro">
+                <a href="../TELA LOGIN/login.html" class="btn-voltar">Fazer Login</a>
+                <a href="../HOME/inicial.html" class="btn-voltar btn-secundario">Voltar ao Início</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        try {
+            if (localStorage.getItem("temaCafeGraos") === "escuro") {
+                document.body.classList.add("modo-escuro");
+            }
+        } catch (e) {}
+    </script>
+</body>
+</html>

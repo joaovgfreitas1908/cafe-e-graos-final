@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Perfil de Café | Café &amp; Grãos</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="stylesheet" href="perfil.css">
+    <script>
+        // REGRA 403: Se tentar acessar o Quiz sem estar logado, redireciona para Erro 403
+        (function () {
+            try {
+                const sessao = JSON.parse(localStorage.getItem("cafe_sessao") || "null");
+                if (!sessao || !sessao.logado) {
+                    window.location.replace("../403/erro403.html");
+                }
+            } catch (e) {
+                window.location.replace("../403/erro403.html");
+            }
+        })();
+    </script>
+</head>
+<body>
+    <!-- Navbar superior com persistência do nome do usuário -->
+    <header class="navbar-perfil">
+        <div class="nav-brand">
+            <div class="logo-circle">
+                <img src="logo.png" alt="Café &amp; Grãos">
+            </div>
+            <span class="brand-name">Café &amp; Grãos</span>
+        </div>
+        <nav class="nav-links">
+            <a href="../HOME/inicial.html" class="nav-item">Início</a>
+            <a href="../TELA DESTAQUES/destaques.html" class="nav-item">Painel</a>
+            <a href="../TELA PRODUTOS/Produtos.html" class="nav-item">Produtos</a>
+            <span class="nav-user" id="nav-user-quiz">Cliente</span>
+            <button type="button" class="btn-sair" id="btn-sair-quiz">Sair</button>
+        </nav>
+    </header>
+
+    <!-- Botões de acessibilidade para fonte e tema -->
+    <div class="barra-acessibilidade"
+         role="group"
+         aria-label="Ferramentas de acessibilidade">
+
+        <button type="button"
+                id="diminuir-fonte"
+                aria-label="Diminuir tamanho da fonte"
+                title="Diminuir fonte">A-</button>
+
+        <button type="button"
+                id="aumentar-fonte"
+                aria-label="Aumentar tamanho da fonte"
+                title="Aumentar fonte">A+</button>
+
+        <button type="button"
+                id="alternar-tema"
+                aria-label="Ativar tema escuro"
+                title="Alternar tema">🌙</button>
+    </div>
+
+    <main class="quiz-wrapper">
+        <h1><strong>Seu Perfil de Café</strong></h1>
+        <p class="subtitulo">
+            Responda às questões abaixo para criarmos a sua assinatura sensorial perfeita
+        </p>
+
+        <form id="form-perfil">
+
+            <!-- Frequência de consumo -->
+            <h4>Com que frequência você toma café?</h4>
+
+            <input type="radio" id="diariamente" name="frequencia" value="diariamente">
+            <label for="diariamente">Diariamente</label><br>
+
+            <input type="radio" id="algumas" name="frequencia" value="algumas">
+            <label for="algumas">Algumas vezes por semana</label><br>
+
+            <input type="radio" id="raramente" name="frequencia" value="raramente">
+            <label for="raramente">Raramente</label><br>
+
+            <input type="radio" id="nunca" name="frequencia" value="nunca">
+            <label for="nunca">Nunca</label><br>
+
+            <!-- Barra de intensidade -->
+            <h4>
+                <label for="intensidade">Intensidade</label>
+            </h4>
+
+            <input type="range" id="intensidade" min="1" max="10" value="5">
+
+            <div class="legenda-intensidade">
+                <span>Suave</span>
+                <span>Intenso</span>
+            </div>
+
+            <!-- Método de preparo -->
+            <h4>
+                <label for="metodo-preparo">
+                    Método de preparo favorito
+                </label>
+            </h4>
+
+            <select name="metodo-preparo" id="metodo-preparo">
+                <option value="" selected disabled>
+                    Selecione um método
+                </option>
+                <option value="coado">Coado</option>
+                <option value="prensa-francesa">Prensa Francesa</option>
+                <option value="espresso">Expresso</option>
+                <option value="moka">Cafeteira Italiana (Mocha)</option>
+                <option value="aeropress">Aeropress</option>
+                <option value="chemex">Chemex</option>
+            </select>
+
+            <!-- Sabores preferidos -->
+            <h4>Sabores que você aprecia</h4>
+
+            <div class="sabores">
+                <label>
+                    <input type="checkbox" value="chocolate">
+                    Chocolate
+                </label>
+
+                <label>
+                    <input type="checkbox" value="caramelo">
+                    Caramelo
+                </label>
+
+                <label>
+                    <input type="checkbox" value="castanhas">
+                    Castanhas
+                </label>
+
+                <label>
+                    <input type="checkbox" value="frutas">
+                    Frutas
+                </label>
+
+                <label>
+                    <input type="checkbox" value="floral">
+                    Floral
+                </label>
+
+                <label>
+                    <input type="checkbox" value="citrico">
+                    Cítrico
+                </label>
+            </div>
+
+            <br>
+
+            <!-- Comentários adicionais -->
+            <h4>
+                <label for="comentario">
+                    Comentários adicionais
+                </label>
+            </h4>
+
+            <textarea
+                name="comentario"
+                id="comentario"
+                rows="6"
+                placeholder="Conte-nos um pouco mais sobre como você prefere adoçar, se usa leite, ou qualquer outra preferência especial..."
+            ></textarea>
+
+            <br><br>
+
+            <!-- Botões do formulário -->
+            <button type="submit">Enviar e Ver Preferências</button>
+            <button type="reset">Limpar</button>
+
+        </form>
+    </main>
+
+    <!-- Notificação de confirmação -->
+    <div id="notificacao-sucesso"
+         class="notificacao-sucesso"
+         role="status"
+         aria-live="polite"
+         aria-atomic="true"></div>
+
+    <script src="perfil.js"></script>
+</body>
+</html>

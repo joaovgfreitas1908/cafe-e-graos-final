@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Destaques - Café &amp; Grãos</title>
+        <link rel="stylesheet" href="destaques.css">
+        <link rel="icon" href="imagens/logo.png" type="image/png">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <script>
+            (function () {
+                try {
+                    const sessao = JSON.parse(localStorage.getItem("cafe_sessao") || "null");
+                    if (!sessao || !sessao.logado) {
+                        window.location.replace("../403/erro403.html");
+                    }
+                } catch (e) {
+                    window.location.replace("../403/erro403.html");
+                }
+            })();
+        </script>
+    </head>
+    
+    <body>
+        <!-- Botões de acessibilidade -->
+        <div class="barra-acessibilidade" role="group" aria-label="Ferramentas de acessibilidade">
+            <button type="button" id="diminuir-fonte" aria-label="Diminuir tamanho da fonte" title="Diminuir fonte">A-</button>
+            <button type="button" id="aumentar-fonte" aria-label="Aumentar tamanho da fonte" title="Aumentar fonte">A+</button>
+            <button type="button" id="alternar-tema" aria-label="Ativar tema escuro" title="Alternar tema">🌙</button>
+        </div>
+        
+        <!-- Navbar padronizada de ponta a ponta -->
+        <header class="navbar">
+            <div class="nav-brand">
+                <div class="logo-circle">
+                    <img src="imagens/logo cafe e grao icon.png" alt="Café &amp; Grão Logo">
+                </div>
+                <span class="brand-name">Café &amp; Grãos</span>
+            </div>
+            <nav class="nav-links" aria-label="Menu principal">
+                <a href="../HOME/inicial.html" class="nav-item">Início</a>
+                <a href="../TELA PRODUTOS/Produtos.html" class="nav-item">Produtos</a>
+                <span class="nav-user" id="nav-user-nome">Cliente</span>
+                <button type="button" class="btn-sair" onclick="sairApp()">Sair</button>
+            </nav>
+        </header>
+
+        <div class="pagina-container">
+            <main class="conteudo-principal">
+                <div class="page-header">
+                    <h1 id="saudacao-usuario">Olá!</h1>
+                    <p>Seja bem-vindo ao seu painel.<br> Veja o andamento do seu perfil de <strong>Café</strong> e novidades recomendadas.</p>
+                </div>
+                
+                <div class="grid-caixas">
+                    <article class="card">
+                        <h2>Descubra seu perfil de café</h2>
+                        <p class="card-subtitle" id="status-quiz-texto">Responda o questionário rápido e descubra as <strong>NOTAS</strong>, <strong>ACIDEZ</strong>, e <strong>MÉTODOS DE PREPAROS</strong> ideais para o seu paladar.</p>
+                        <div class="card-action">
+                            <button type="button" class="btn-primary btn-quiz" id="btn-fazer-quiz" onclick="fazerQuiz()">Fazer o Quiz</button>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <h2>Minhas Preferências</h2>
+                        <p class="card-subtitle" id="status-pref-texto">Gerencie os dados salvos sobre seus sabores favoritos, frequência de consumo e métodos de preparo preferidos.</p>
+                        <div class="card-action">
+                            <button type="button" class="btn-primary btn-preferencias" onclick="verPreferencias()">Ver Preferências</button>
+                        </div>
+                    </article>
+
+                    <article class="card caixa-destaque">
+                        <h2>Café em Destaque</h2>
+                        <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=800&q=80" alt="Xícara de café especial com espuma cremosa.">
+                        <p class="card-subtitle"><strong>Frapuccino:</strong> O nosso clássico gelado.<br>Café batido com gelo, leite e caldas especiais, coberto com uma generosa porção de chantilly e coberturas. A escolha ideal para refrescar os dias quentes.</p>
+                    </article>
+                </div>    
+            </main>
+
+            <!-- FOOTER -->
+            <footer class="footer">
+
+                <div class="footer-content">
+
+                    <div class="footer-info">
+
+                        <h3>Café &amp; Grãos</h3>
+
+                        <p>
+                            Rua do Grão Perfumado, 456 -
+                            Bairro Centro | Rio de Janeiro - RJ
+                        </p>
+
+                        <p>
+                            Contato: (21) 0000-0000 |
+                            contato@cafegrao.com
+                        </p>
+
+                    </div>
+
+                    <div class="footer-rights">
+
+                        <p>
+                            &copy; 2026 Café &amp; Grãos.
+                            Todos os direitos reservados.
+                        </p>
+
+                    </div>
+
+                </div>
+            </footer>
+        </div>    
+        <script src="destaques.js"></script>   
+    </body>
+</html>

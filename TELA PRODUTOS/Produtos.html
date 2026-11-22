@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café &amp; Grãos</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <script src="mov.js" defer></script>
+</head>
+
+<body>
+    <div class="pagina-container">
+        <!-- CABEÇALHO -->
+        <header class="navbar">
+            <div class="nav-brand logo-container">
+                <div class="logo-circle">
+                    <img class="logo-imagem"
+                         src="img/logo.png"
+                         alt="Logo Café & Grãos">
+                </div>
+                <span class="brand-name logo-text">Café &amp; Grãos</span>
+            </div>
+
+            <nav class="nav-links" aria-label="Navegação principal">
+                <a href="../HOME/inicial.html" class="nav-item">Início</a>
+                <a href="../TELA DESTAQUES/destaques.html" class="nav-item">Destaques</a>
+                <a href="../TELA PERFIL/perfil.html" class="nav-item">Quiz</a>
+                <a href="../TELA PREFERENCIAS/preferencias.html" class="nav-item">Preferências</a>
+                <a href="#cafes" class="nav-item">Cafés</a>
+                <a href="#metodos" class="nav-item">Métodos</a>
+            </nav>
+
+            <div class="auth-container botoes-topo" id="botoes-topo-produtos">
+                <a href="../TELA LOGIN/login.html" class="btn-secondary btn-auth">Login</a>
+                <a href="../TELA CADASTRO/cadastro.html" class="btn-primary btn-auth">Cadastro</a>
+            </div>
+
+            <!-- Botões de acessibilidade para ajustar a fonte e alternar o tema -->
+            <div class="barra-acessibilidade" role="group" aria-label="Ferramentas de acessibilidade">
+                <button type="button" id="diminuir-fonte" aria-label="Diminuir tamanho da fonte" title="Diminuir fonte">A-</button>
+                <button type="button" id="aumentar-fonte" aria-label="Aumentar tamanho da fonte" title="Aumentar fonte">A+</button>
+                <button type="button" id="alternar-tema" aria-label="Alternar tema" title="Alternar tema">🌙</button>
+            </div>
+        </header>
+
+        <main id="inicio">
+            <!-- NOSSOS CAFÉS -->
+            <section class="cafes" id="cafes">
+                <div class="container">
+                    <h2>Nossos Cafés</h2>
+
+                    <p class="subtitulo">
+                        Uma seleção pensada para proporcionar diferentes
+                        sensações e notas aromáticas.
+                    </p>
+
+                    <div class="modo-visualizacao">
+                        <button type="button" id="modo-carrossel" aria-pressed="true">
+                            Carrossel
+                        </button>
+
+                        <button type="button" id="modo-lista" aria-pressed="false">
+                            Lista
+                        </button>
+                    </div>
+
+                    <div class="grade-cafes">
+                        <!-- CAFÉ TRADICIONAL -->
+                        <div class="card-cafe">
+                            <div class="foto-cafe galeria-cafe" role="group" aria-label="Fotos de Café Tradicional">
+                                <img class="imagemc foto-produto" src="img/cafe_tradicional.jpg" alt="Café Tradicional servido" decoding="async">
+                            <img src="img/cafe_tradicional_barista.png" alt="Barista apresentando Café Tradicional" class="imagemc foto-barista" hidden="" decoding="async"><button type="button" class="seta-foto seta-foto-anterior" aria-label="Foto anterior de Café Tradicional" hidden="">‹</button><button type="button" class="seta-foto seta-foto-proxima" aria-label="Próxima foto de Café Tradicional" hidden="">›</button><span class="contador-fotos" role="status" aria-live="polite" aria-atomic="true" hidden="">1 / 2</span>
+</div>
+
+                            <h3>Café Tradicional</h3>
+
+                            <details class="detalhes-cafe"><summary class="botao-card">Ver detalhes</summary><p class="descricao-cafe">
+                                Um café clássico e acolhedor, com aroma
+                                marcante, corpo aveludado e notas que
+                                lembram caramelo e chocolate ao leite.
+                                O preparo coado valoriza seus sabores
+                                e proporciona uma bebida equilibrada.
+                                Uma boa escolha para acompanhar pães,
+                                bolos e uma pausa no dia.
+                            </p>
+                            <button type="button" class="botao-card btn-selecionar-cafe" style="margin-top: 12px;">Selecionar Café</button>
+                            </details>
+</div>
+
+                        <!-- CAFÉ EXPRESSO -->
+                        <div class="card-cafe">
+                            <div class="foto-cafe galeria-cafe" role="group" aria-label="Fotos de Café Expresso">
+                                <img class="imagemc foto-produto" src="img/cafe_expresso.jpg" alt="Café Expresso servido" decoding="async">
+                            <img src="img/cafe_expresso_barista.png" alt="Barista apresentando Café Expresso" class="imagemc foto-barista" hidden="" decoding="async"><button type="button" class="seta-foto seta-foto-anterior" aria-label="Foto anterior de Café Expresso" hidden="">‹</button><button type="button" class="seta-foto seta-foto-proxima" aria-label="Próxima foto de Café Expresso" hidden="">›</button><span class="contador-fotos" role="status" aria-live="polite" aria-atomic="true" hidden="">1 / 2</span>
+</div>
+
+                            <h3>Café Expresso</h3>
+
+                            <details class="detalhes-cafe"><summary class="botao-card">Ver detalhes</summary><p class="descricao-cafe">
+                                Preparado sob pressão, o café expresso
+                                apresenta sabor concentrado, aroma intenso
+                                e uma delicada camada de crema.
+                                Nesta seleção, traz acidez cítrica
+                                equilibrada e finalização achocolatada.
+                                Ideal para quem prefere uma bebida curta
+                                e marcante, apreciada logo após o preparo.
+                            </p>
+                            <button type="button" class="botao-card btn-selecionar-cafe" style="margin-top: 12px;">Selecionar Café</button>
+                            </details>
+</div>
+
+                        <!-- CAFÉ COM LEITE -->
+                        <div class="card-cafe">
+                            <div class="foto-cafe galeria-cafe" role="group" aria-label="Fotos de Café com Leite">
+                                <img class="imagemc foto-produto" src="img/cafe_com_leite.jpg" alt="Café com Leite servido" decoding="async">
+                            <img src="img/cafe_com_leite_barista.png" alt="Barista apresentando Café com Leite" class="imagemc foto-barista" hidden="" decoding="async"><button type="button" class="seta-foto seta-foto-anterior" aria-label="Foto anterior de Café com Leite" hidden="">‹</button><button type="button" class="seta-foto seta-foto-proxima" aria-label="Próxima foto de Café com Leite" hidden="">›</button><span class="contador-fotos" role="status" aria-live="polite" aria-atomic="true" hidden="">1 / 2</span>
+</div>
+
+                            <h3>Café com Leite</h3>
+
+                            <details class="detalhes-cafe"><summary class="botao-card">Ver detalhes</summary><p class="descricao-cafe">
+                                A intensidade do café encontra a suavidade
+                                do leite aquecido, formando uma bebida
+                                cremosa e confortável. As notas de castanha
+                                e especiarias do café se combinam com
+                                a doçura natural do leite.
+                                Uma opção para o café da manhã
+                                ou para acompanhar um lanche da tarde.
+                            </p>
+                            <button type="button" class="botao-card btn-selecionar-cafe" style="margin-top: 12px;">Selecionar Café</button>
+                            </details>
+</div>
+
+                        <!-- CAPPUCCINO -->
+                        <div class="card-cafe">
+                            <div class="foto-cafe galeria-cafe" role="group" aria-label="Fotos de Cappuccino">
+                                <img class="imagemc foto-produto" src="img/cappuccino.jpg" alt="Cappuccino servido" decoding="async">
+                            <img src="img/cappuccino_barista.png" alt="Barista apresentando Cappuccino" class="imagemc foto-barista" hidden="" decoding="async"><button type="button" class="seta-foto seta-foto-anterior" aria-label="Foto anterior de Cappuccino" hidden="">‹</button><button type="button" class="seta-foto seta-foto-proxima" aria-label="Próxima foto de Cappuccino" hidden="">›</button><span class="contador-fotos" role="status" aria-live="polite" aria-atomic="true" hidden="">1 / 2</span>
+</div>
+
+                            <h3>Cappuccino</h3>
+
+                            <details class="detalhes-cafe"><summary class="botao-card">Ver detalhes</summary><p class="descricao-cafe">
+                                Uma combinação de café expresso,
+                                leite vaporizado e uma camada generosa
+                                de espuma. O resultado é uma bebida
+                                cremosa, aromática e equilibrada,
+                                que preserva a presença do café.
+                                Pode ser finalizada com canela ou cacau,
+                                conforme sua preferência e disponibilidade.
+                            </p>
+                            <button type="button" class="botao-card btn-selecionar-cafe" style="margin-top: 12px;">Selecionar Café</button>
+                            </details>
+</div>
+
+                        <!-- CAFÉ MOCHA -->
+                        <div class="card-cafe">
+                            <div class="foto-cafe galeria-cafe" role="group" aria-label="Fotos de Café Mocha">
+                                <img class="imagemc foto-produto" src="img/cafe_mocha.jpg" alt="Café Mocha servido" decoding="async">
+                            <img src="img/cafe_mocha_barista.png" alt="Barista apresentando Café Mocha" class="imagemc foto-barista" hidden="" decoding="async"><button type="button" class="seta-foto seta-foto-anterior" aria-label="Foto anterior de Café Mocha" hidden="">‹</button><button type="button" class="seta-foto seta-foto-proxima" aria-label="Próxima foto de Café Mocha" hidden="">›</button><span class="contador-fotos" role="status" aria-live="polite" aria-atomic="true" hidden="">1 / 2</span>
+</div>
+
+                            <h3>Café Mocha</h3>
+
+                            <details class="detalhes-cafe"><summary class="botao-card">Ver detalhes</summary><p class="descricao-cafe">
+                                Café expresso, chocolate e leite cremoso
+                                se encontram em uma bebida envolvente
+                                e mais doce. O chocolate complementa
+                                o sabor do café, enquanto o leite deixa
+                                a textura suave.
+                                Uma escolha para quem gosta de combinar
+                                a pausa para o café com um toque
+                                de sobremesa.
+                            </p>
+                            <button type="button" class="botao-card btn-selecionar-cafe" style="margin-top: 12px;">Selecionar Café</button>
+                            </details>
+</div>
+
+                        <!-- CAFÉ LATTE -->
+                        <div class="card-cafe">
+                            <div class="foto-cafe galeria-cafe" role="group" aria-label="Fotos de Café Latte">
+                                <img class="imagemc foto-produto" src="img/cafe_latte.jpg" alt="Café Latte servido" decoding="async">
+                            <img src="img/cafe_latte_barista.png" alt="Barista apresentando Café Latte" class="imagemc foto-barista" hidden="" decoding="async"><button type="button" class="seta-foto seta-foto-anterior" aria-label="Foto anterior de Café Latte" hidden="">‹</button><button type="button" class="seta-foto seta-foto-proxima" aria-label="Próxima foto de Café Latte" hidden="">›</button><span class="contador-fotos" role="status" aria-live="polite" aria-atomic="true" hidden="">1 / 2</span>
+</div>
+
+                            <h3>Café Latte</h3>
+
+                            <details class="detalhes-cafe"><summary class="botao-card">Ver detalhes</summary><p class="descricao-cafe">
+                                Preparado com café expresso e uma porção
+                                generosa de leite vaporizado, o latte
+                                tem sabor suave e textura cremosa.
+                                Uma fina camada de espuma completa
+                                a bebida, deixando o café presente
+                                de forma delicada.
+                                Ideal para quem prefere apreciar
+                                uma bebida maior e menos intensa.
+                            </p>
+                            <button type="button" class="botao-card btn-selecionar-cafe" style="margin-top: 12px;">Selecionar Café</button>
+                            </details>
+</div>
+
+                        <!-- CAFÉ MACCHIATO -->
+                        <div class="card-cafe">
+                            <div class="foto-cafe galeria-cafe" role="group" aria-label="Fotos de Café Macchiato">
+                                <img class="imagemc foto-produto" src="img/cafe_macchiato.jpg" alt="Café Macchiato servido" decoding="async">
+                            <img src="img/cafe_macchiato_barista.png" alt="Barista apresentando Café Macchiato" class="imagemc foto-barista" hidden="" decoding="async"><button type="button" class="seta-foto seta-foto-anterior" aria-label="Foto anterior de Café Macchiato" hidden="">‹</button><button type="button" class="seta-foto seta-foto-proxima" aria-label="Próxima foto de Café Macchiato" hidden="">›</button><span class="contador-fotos" role="status" aria-live="polite" aria-atomic="true" hidden="">1 / 2</span>
+</div>
+
+                            <h3>Café Macchiato</h3>
+
+                            <details class="detalhes-cafe"><summary class="botao-card">Ver detalhes</summary><p class="descricao-cafe">
+                                Um café expresso marcado por uma pequena
+                                porção de espuma de leite.
+                                Essa adição suaviza o primeiro contato
+                                com a bebida sem esconder o aroma
+                                e a intensidade do café.
+                                Servido em uma porção pequena,
+                                é uma opção para quem gosta de expresso
+                                com um toque de cremosidade.
+                            </p>
+                            <button type="button" class="botao-card btn-selecionar-cafe" style="margin-top: 12px;">Selecionar Café</button>
+                            </details>
+</div>
+
+                        <!-- CAFÉ AMERICANO -->
+                        <div class="card-cafe">
+                            <div class="foto-cafe galeria-cafe" role="group" aria-label="Fotos de Café Americano">
+                                <img class="imagemc foto-produto" src="img/cafe_americano.jpg" alt="Café Americano servido" decoding="async">
+                            <img src="img/cafe_americano_barista.png" alt="Barista apresentando Café Americano" class="imagemc foto-barista" hidden="" decoding="async"><button type="button" class="seta-foto seta-foto-anterior" aria-label="Foto anterior de Café Americano" hidden="">‹</button><button type="button" class="seta-foto seta-foto-proxima" aria-label="Próxima foto de Café Americano" hidden="">›</button><span class="contador-fotos" role="status" aria-live="polite" aria-atomic="true" hidden="">1 / 2</span>
+</div>
+
+                            <h3>Café Americano</h3>
+
+                            <details class="detalhes-cafe"><summary class="botao-card">Ver detalhes</summary><p class="descricao-cafe">
+                                Feito com café expresso e água quente,
+                                o americano oferece uma bebida mais longa
+                                e menos concentrada.
+                                Mantém o aroma do expresso,
+                                com uma textura leve e sabor agradável
+                                para apreciar aos poucos.
+                                Uma boa escolha para quem prefere
+                                café preto em uma porção maior.
+                            </p>
+                            <button type="button" class="botao-card btn-selecionar-cafe" style="margin-top: 12px;">Selecionar Café</button>
+                            </details>
+</div>
+
+                        <!-- AFFOGATO -->
+                        <div class="card-cafe">
+                            <div class="foto-cafe galeria-cafe" role="group" aria-label="Fotos de Affogato">
+                                <img class="imagemc foto-produto" src="img/cafe_affogato.jpg" alt="Affogato servido" decoding="async">
+                            <img src="img/cafe_affogato_barista.png" alt="Barista apresentando Affogato" class="imagemc foto-barista" hidden="" decoding="async"><button type="button" class="seta-foto seta-foto-anterior" aria-label="Foto anterior de Affogato" hidden="">‹</button><button type="button" class="seta-foto seta-foto-proxima" aria-label="Próxima foto de Affogato" hidden="">›</button><span class="contador-fotos" role="status" aria-live="polite" aria-atomic="true" hidden="">1 / 2</span>
+</div>
+
+                            <h3>Affogato</h3>
+
+                            <details class="detalhes-cafe"><summary class="botao-card">Ver detalhes</summary><p class="descricao-cafe">
+                                Uma sobremesa italiana que combina
+                                sorvete de baunilha com uma dose
+                                de café expresso quente, adicionada
+                                na hora de servir.
+                                O contraste entre quente e gelado
+                                cria uma mistura cremosa, com a doçura
+                                do sorvete equilibrando a intensidade
+                                do café. Aproveite logo após o preparo.
+                            </p>
+                            <button type="button" class="botao-card btn-selecionar-cafe" style="margin-top: 12px;">Selecionar Café</button>
+                            </details>
+</div>
+
+                        <!-- COLD BREW -->
+                        <div class="card-cafe">
+                            <div class="foto-cafe galeria-cafe" role="group" aria-label="Fotos de Cold Brew">
+                                <img class="imagemc foto-produto" src="img/cafe_coldbrew.jpg" alt="Cold Brew servido" decoding="async">
+                            <img src="img/cafe_coldbrew_barista.png" alt="Barista apresentando Cold Brew" class="imagemc foto-barista" hidden="" decoding="async"><button type="button" class="seta-foto seta-foto-anterior" aria-label="Foto anterior de Cold Brew" hidden="">‹</button><button type="button" class="seta-foto seta-foto-proxima" aria-label="Próxima foto de Cold Brew" hidden="">›</button><span class="contador-fotos" role="status" aria-live="polite" aria-atomic="true" hidden="">1 / 2</span>
+</div>
+
+                            <h3>Cold Brew</h3>
+
+                            <details class="detalhes-cafe"><summary class="botao-card">Ver detalhes</summary><p class="descricao-cafe">
+                                Preparado por uma extração lenta
+                                em água fria, o cold brew é servido
+                                gelado e apresenta uma experiência
+                                diferente do café quente tradicional.
+                                Seu sabor costuma ser suave,
+                                com amargor e acidez percebidos
+                                menos intensamente.
+                                Uma opção refrescante para os dias quentes.
+                            </p>
+                            <button type="button" class="botao-card btn-selecionar-cafe" style="margin-top: 12px;">Selecionar Café</button>
+                            </details>
+</div>
+
+                        <!-- CAFÉ CORTADO -->
+                        <div class="card-cafe">
+                            <div class="foto-cafe galeria-cafe" role="group" aria-label="Fotos de Café Cortado">
+                                <img class="imagemc foto-produto" src="img/cafe_cortado.jpg" alt="Café Cortado servido" decoding="async">
+                            <img src="img/cafe_cortado_barista.png" alt="Barista apresentando Café Cortado" class="imagemc foto-barista" hidden="" decoding="async"><button type="button" class="seta-foto seta-foto-anterior" aria-label="Foto anterior de Café Cortado" hidden="">‹</button><button type="button" class="seta-foto seta-foto-proxima" aria-label="Próxima foto de Café Cortado" hidden="">›</button><span class="contador-fotos" role="status" aria-live="polite" aria-atomic="true" hidden="">1 / 2</span>
+</div>
+
+                            <h3>Café Cortado</h3>
+
+                            <details class="detalhes-cafe"><summary class="botao-card">Ver detalhes</summary><p class="descricao-cafe">
+                                Café expresso combinado com uma pequena
+                                porção de leite quente, em uma proporção
+                                que mantém o café em destaque.
+                                O leite suaviza a intensidade
+                                e acrescenta cremosidade, sem transformar
+                                a bebida em um café longo.
+                                Ideal para quem busca equilíbrio
+                                em uma porção pequena.
+                            </p>
+                            <button type="button" class="botao-card btn-selecionar-cafe" style="margin-top: 12px;">Selecionar Café</button>
+                            </details>
+</div>
+
+                        <!-- CAFÉ COM CHANTILLY -->
+                        <div class="card-cafe">
+                            <div class="foto-cafe galeria-cafe" role="group" aria-label="Fotos de Café com Chantilly">
+                                <img class="imagemc foto-produto" src="img/cafe_chantilly.jpg" alt="Café com Chantilly servido" decoding="async">
+                            <img src="img/cafe_chantilly_barista.png" alt="Barista apresentando Café com Chantilly" class="imagemc foto-barista" hidden="" decoding="async"><button type="button" class="seta-foto seta-foto-anterior" aria-label="Foto anterior de Café com Chantilly" hidden="">‹</button><button type="button" class="seta-foto seta-foto-proxima" aria-label="Próxima foto de Café com Chantilly" hidden="">›</button><span class="contador-fotos" role="status" aria-live="polite" aria-atomic="true" hidden="">1 / 2</span>
+</div>
+
+                            <h3>Café com Chantilly</h3>
+
+                            <details class="detalhes-cafe"><summary class="botao-card">Ver detalhes</summary><p class="descricao-cafe">
+                                Uma base de café expresso recebe
+                                uma cobertura generosa de chantilly,
+                                criando um contraste entre o café
+                                intenso e a doçura do creme.
+                                Conforme o chantilly se mistura
+                                à bebida, a textura fica mais cremosa.
+                                Uma escolha para quem gosta de um café
+                                com toque de sobremesa.
+                            </p>
+                            <button type="button" class="botao-card btn-selecionar-cafe" style="margin-top: 12px;">Selecionar Café</button>
+                            </details>
+</div>
+                    </div>
+
+                    <div class="controles">
+                        <button type="button" id="anterior" aria-label="Café anterior">
+                            ❮
+                        </button>
+
+                        <button type="button" id="proximo" aria-label="Próximo café">
+                            ❯
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MÉTODOS DE PREPARO -->
+            <section class="metodos" id="metodos">
+                <div class="container">
+                    <h2>Métodos de Preparo</h2>
+
+                    <div class="grade-metodos" id="carrossel-metodos" tabindex="0" role="region" aria-label="Carrossel de métodos de preparo">
+<article class="metodo"><img src="img/metodo-coado.png" alt="Coado: Enxágue o filtro de papel, adicione o café moído e despeje água quente aos poucos." width="1024" height="1536" decoding="async" loading="lazy"><h3 class="visualmente-oculto">Coado</h3></article><article class="metodo"><img src="img/metodo-prensa-francesa.png" alt="Prensa Francesa: Adicione café de moagem grossa, cubra com água quente, aguarde quatro minutos e pressione o êmbolo devagar." width="1024" height="1536" decoding="async" loading="lazy"><h3 class="visualmente-oculto">Prensa Francesa</h3></article><article class="metodo"><img src="img/metodo-expresso.png" alt="Expresso: Dose o café de moagem fina no porta-filtro, nivele e compacte. Encaixe na máquina e faça a extração." width="1024" height="1536" decoding="async" loading="lazy"><h3 class="visualmente-oculto">Expresso</h3></article><article class="metodo"><img src="img/metodo-italiana.png" alt="Cafeteira Italiana (Moka): Coloque água abaixo da válvula, encha o funil com café sem compactar, monte e aqueça em fogo baixo." width="1024" height="1536" decoding="async" loading="lazy"><h3 class="visualmente-oculto">Cafeteira Italiana (Moka)</h3></article><article class="metodo"><img src="img/metodo-aeropress.png" alt="AeroPress: Encaixe o filtro e adicione o café, despeje água quente e mexa. Pressione o êmbolo devagar." width="1024" height="1536" decoding="async" loading="lazy"><h3 class="visualmente-oculto">AeroPress</h3></article><article class="metodo"><img src="img/metodo-chemex.png" alt="Chemex: Enxágue o filtro com água quente, adicione o café e despeje água aos poucos, deixando filtrar." width="1024" height="1536" decoding="async" loading="lazy"><h3 class="visualmente-oculto">Chemex</h3></article>
+</div>
+<div class="controles controles-metodos" hidden="">
+<button type="button" id="metodo-anterior" aria-label="Método de preparo anterior" aria-controls="carrossel-metodos">❮</button><button type="button" id="metodo-proximo" aria-label="Próximo método de preparo" aria-controls="carrossel-metodos">❯</button>
+</div>
+</div>
+            </section>
+        </main>
+
+        <!-- RODAPÉ -->
+         <footer class="footer">
+
+        <div class="footer-content">
+
+            <div class="footer-info">
+
+                <h3>Café & Grãos</h3>
+
+                <p>
+                    Rua do Grão Perfumado, 456 -
+                    Bairro Centro | Rio de Janeiro - RJ
+                </p>
+
+                <p>
+                    Contato: (21) 0000-0000 |
+                    contato@cafegrao.com
+                </p>
+
+            </div>
+
+            <div class="footer-rights">
+
+                <p>
+                    &copy; 2026 Café & Grãos.
+                    Todos os direitos reservados.
+                </p>
+
+
+            </div>
+
+        </div>
+    </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --cor-marrom-cafe: #3D2417;
+    --cor-marrom-medio: #674F41;
+    --cor-creme: #FAF2E6;
+    --cor-bege: #EBE2D7;
+    --cor-taupe: #97867A;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Poppins', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: var(--cor-creme);
+    color: var(--cor-marrom-cafe);
+}
+
+.container-erro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    color: var(--cor-marrom-cafe);
+}
+
+.codigo-erro {
+    font-size: 100px;
+    margin: 0;
+    color: var(--cor-marrom-cafe);
+}
+
+.container-erro h2 {
+    font-size: 32px;
+    margin: 10px 0;
+    color: var(--cor-marrom-cafe);
+}
+
+.container-erro p {
+    font-size: 18px;
+    margin: 0 auto;
+    max-width: 540px;
+    color: var(--cor-marrom-medio);
+}
+
+.imagem-erro {
+    width: 220px;
+    height: auto;
+    margin: 20px 0;
+}
+
+.texto-erro {
+    transform: translateY(-35px);
+}
+
+.acoes-erro {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.btn-voltar {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--cor-marrom-cafe);
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 6px;
+    border: 1px solid var(--cor-marrom-cafe);
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-voltar:hover {
+    background-color: var(--cor-taupe);
+    border-color: var(--cor-taupe);
+}
+
+.btn-voltar.btn-secundario {
+    background-color: transparent;
+    color: var(--cor-marrom-cafe);
+}
+
+.btn-voltar.btn-secundario:hover {
+    background-color: var(--cor-marrom-cafe);
+    color: #FFFFFF;
+}
+
+.btn-voltar:focus-visible {
+    outline: 3px solid var(--cor-marrom-medio);
+    outline-offset: 3px;
+}
+
+body.modo-escuro {
+    background-color: #211813;
+    color: #F8EEDF;
+}
+
+body.modo-escuro .codigo-erro,
+body.modo-escuro h2 {
+    color: #F8EEDF;
+}
+
+body.modo-escuro p {
+    color: #E0C8B3;
+}
+
+body.modo-escuro .btn-voltar {
+    background-color: #D4AD89;
+    border-color: #D4AD89;
+    color: #211813;
+}
+
+body.modo-escuro .btn-voltar.btn-secundario {
+    background-color: transparent;
+    color: #D4AD89;
+}

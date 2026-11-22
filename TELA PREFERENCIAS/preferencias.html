@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Preferências - Café &amp; Grãos</title>
+    <link rel="icon" href="imagens/logo.png" type="image/png">
+    <link rel="stylesheet" href="preferencias.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        // REGRA 404: Se tentar acessar Preferências sem ter feito o Quiz, redireciona para Erro 404
+        (function () {
+            try {
+                const sessao = JSON.parse(localStorage.getItem("cafe_sessao") || "null");
+                const quizzes = JSON.parse(localStorage.getItem("cafe_quizzes") || "{}");
+                const quizAtual = JSON.parse(localStorage.getItem("cafe_quiz_atual") || "null");
+                const quizUsuario = (sessao && sessao.email && quizzes[sessao.email])
+                    ? quizzes[sessao.email]
+                    : (sessao && sessao.logado ? quizAtual : null);
+
+                if (!quizUsuario) {
+                    window.location.replace("../404/erro404.html");
+                }
+            } catch (e) {
+                window.location.replace("../404/erro404.html");
+            }
+        })();
+    </script>
+</head>
+<body>
+
+    <!-- Botões de acessibilidade para ajustar a fonte e alternar o tema -->
+    <div class="barra-acessibilidade" role="group" aria-label="Ferramentas de acessibilidade">
+        <button type="button" id="diminuir-fonte" aria-label="Diminuir tamanho da fonte" title="Diminuir fonte">A-</button>
+        <button type="button" id="aumentar-fonte" aria-label="Aumentar tamanho da fonte" title="Aumentar fonte">A+</button>
+        <button type="button" id="alternar-tema" aria-label="Ativar tema escuro" title="Alternar tema">🌙</button>
+    </div>
+
+    <!-- NAVBAR fluida de ponta a ponta -->
+    <header class="navbar">
+        <div class="nav-brand">
+            <div class="logo-circle">
+                <img src="imagens/logo cafe e grao icon.png" alt="Café &amp; Grão Logo">
+            </div>
+            <span class="brand-name">Café &amp; Grãos</span>
+        </div>
+        <nav class="nav-links" aria-label="Menu principal">
+            <a href="../HOME/inicial.html" class="nav-item">Início</a>
+            <a href="../TELA DESTAQUES/destaques.html" class="nav-item">Painel</a>
+            <a href="../TELA PRODUTOS/Produtos.html" class="nav-item">Produtos</a>
+            <span class="nav-user" id="nav-user-pref">Cliente</span>
+            <button type="button" class="btn-sair" onclick="sairApp()">Sair</button>
+        </nav>
+    </header>
+
+    <div class="pagina-container">
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main class="conteudo-principal">
+            <section class="page-header">
+                <h1>Minhas Preferências de Café</h1>
+                <p>Com base nas suas respostas do quiz, estruturamos o seu perfil sensorial perfeito.</p>
+            </section>
+
+            <div class="content-grid">
+
+                <!-- CARD 1: RESULTADO DO QUIZ -->
+                <div class="card quiz-result-card">
+                    <div>
+                        <h2>Seu Perfil Sensorial</h2>
+                        <p class="card-subtitle">Resultado obtido através do seu último quiz de paladar.</p>
+
+                        <div class="profile-badge">
+                            <span class="badge-tag">Perfil Predominante</span>
+                            <h3 id="perfil-titulo">☕ Equilibrado &amp; Aromático</h3>
+                        </div>
+
+                        <div class="profile-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Notas Sensoriais:</span>
+                                <span class="detail-value" id="perfil-notas">Chocolate ao leite, caramelo e castanhas tostadas.</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Acidez Ideal:</span>
+                                <span class="detail-value" id="perfil-acidez">Baixa a Média (suave e agradável ao paladar).</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Corpo do Café:</span>
+                                <span class="detail-value" id="perfil-corpo">Aveludado e Encorpado.</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Intensidade Selecionada:</span>
+                                <span class="detail-value" id="perfil-intensidade">5 / 10</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Frequência de Consumo:</span>
+                                <span class="detail-value" id="perfil-frequencia">Diariamente</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Método de Preparo:</span>
+                                <span class="detail-value" id="perfil-metodo">Prensa Francesa</span>
+                            </div>
+                            <div class="detail-item" id="item-comentario" hidden>
+                                <span class="detail-label">Observações:</span>
+                                <span class="detail-value" id="perfil-comentario"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-action">
+                        <button type="button" class="btn-primary" onclick="refazerQuiz()">Refazer Quiz</button>
+                    </div>
+                </div>
+
+                <!-- CARD 2: RECOMENDAÇÕES DE CAFÉ -->
+                <div class="card recommendations-card">
+                    <div>
+                        <h2>Recomendações para Você</h2>
+                        <p class="card-subtitle" id="subtitulo-recomendacoes">Selecionados a dedo com base no seu perfil sensorial.</p>
+
+                        <div class="recommendations-list" id="lista-recomendacoes">
+                            <!-- Preenchido dinamicamente pelo preferencias.js -->
+                        </div>
+                    </div>
+
+                    <div class="card-actions-group">
+                        <button type="button" class="btn-primary" id="btn-salvar-preferencias" onclick="salvarPreferencias()">Confirmar Preferências</button>
+                        <button type="button" class="btn-secondary" onclick="verProdutos()">Ver Produtos</button>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+
+            <div class="footer-content">
+
+                <div class="footer-info">
+
+                    <h3>Café &amp; Grãos</h3>
+
+                    <p>
+                        Rua do Grão Perfumado, 456 -
+                        Bairro Centro | Rio de Janeiro - RJ
+                    </p>
+
+                    <p>
+                        Contato: (21) 0000-0000 |
+                        contato@cafegrao.com
+                    </p>
+
+                </div>
+
+                <div class="footer-rights">
+
+                    <p>
+                        &copy; 2026 Café &amp; Grãos.
+                        Todos os direitos reservados.
+                    </p>
+
+                </div>
+
+            </div>
+        </footer>
+    </div>
+
+    <script src="preferencias.js"></script>
+</body>
+</html>
